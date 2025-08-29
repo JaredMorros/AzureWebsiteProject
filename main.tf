@@ -5,10 +5,6 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
-    github = {
-      source = "integrations/github"
-      version = "~> 5.12.0"
-    }
   }
 
   required_version = ">= 1.1.0"
@@ -16,15 +12,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-}
-
-provider "github" {
-  token = "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"
-  owner = "JaredMorros"
-}
-
-data "github_repository" "repo" {
-  name = "AzureWebsiteProject"
 }
 
 #The resource group. Has a couple of tags, but more importantly the name and location variables will be referenced many, many times in future.
