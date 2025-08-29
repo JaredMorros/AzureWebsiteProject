@@ -27,5 +27,10 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --account-name terraformedstorage --auth-mode key -d '$web' -s .
+      
+      - name: logout
+        run: |
+              az logout
+        if: always()
 
 
