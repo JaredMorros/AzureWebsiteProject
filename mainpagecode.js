@@ -7,7 +7,7 @@ function Saxophone(){
         document.getElementById("saxaboom").style.display = "block";
         funky = true;
         button.innerText = "NO WAIT GO BACK"
-        saxophoneaudio.onload();
+        saxophoneaudio.load();
         saxophoneaudio.play();
     }
     else{
