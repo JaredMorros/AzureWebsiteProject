@@ -75,3 +75,10 @@ resource "azurerm_storage_blob" "styleblob"{
   content_type = "text/css"
   source = "mainpagelooks.css"
 }
+resource "azurerm_storage_blob" "musicblob"{
+  name = "Jack-a-Dandy.mp3"
+  storage_account_name = azurerm_storage_account.storage.name
+  storage_container_name = "$web"
+  type = "Block"
+  source = "Jack-a-Dandy.mp3"
+}
