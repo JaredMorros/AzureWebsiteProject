@@ -28,15 +28,11 @@ resource "azurerm_resource_group" "rg" {
 
 #Creates a storage account. This is just a simple blob storage. Access tier is hot as default, but I've put it here anyway.
 #I have since modified this with the aim of hosting a static website. Right now, it does succeed at making a barebones proof of concept.
-#TODO:
-#- I have to figure out how to have this reference a Github repo as its source, much like how I did my S3 static website.
-#I'm not sure if I can simply put a github URL as my source. It's possible I might need a module with a github URL, then reference the module?
-
-#- I have to do the same from GitHub's end via Github actions, so whenever that updates, the website does too.
-#I've done this before, should be easy enough to do it again.
-
-#- I need content for the website on Github.
-#This should be fairly easy, I'm just making something simple that proves the website is active and that I can push changes.
+#
+#My initial plan for this project was to create a CI/CD pipeline via GitHub Actions, but it seems like I can't do that on the Academy Azure subscription.
+#I'm fairly sure I have created correct yaml and etc for it though, so I will just settle for deploying the website via Terraform and keep using the GitHub as just a repo.
+#
+#
 resource "azurerm_storage_account" "storage" {
   name                     = "terraformedstorage"
   resource_group_name      = azurerm_resource_group.rg.name
