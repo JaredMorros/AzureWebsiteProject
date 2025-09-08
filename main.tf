@@ -59,12 +59,12 @@ resource "azurerm_storage_blob" "indexblob"{
 }
 
 resource "azurerm_storage_blob" "scriptblob"{
-  name = "mainpagecode.js"
+  name = "index.js"
   storage_account_name = azurerm_storage_account.storage.name
   storage_container_name = "$web"
   type = "Block"
   content_type = "text/javascript"
-  source = "mainpagecode.js"
+  source = "index.js"
 }
 
 resource "azurerm_storage_blob" "styleblob"{
